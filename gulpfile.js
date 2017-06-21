@@ -1,6 +1,8 @@
 /* Importamos las dependencias necesarias */
 var gulp = require( 'gulp' );
 var sass = require( 'gulp-sass' );
+var browserSync = require( 'browser-sync' );
+var reload = browserSync .reload;
 
 /* Creamos la 1era Tarea:
    1. Ejecuta el paquete que va a realizar la tarea "sass"
@@ -22,4 +24,32 @@ gulp .task( 'sass', function() {
 /* NOTA:
     Para lanzar esta tarea usamos el comando gulp y el nombre de la tarea.
     $ gulp sass
+*/
+
+/* Creamos la 2da Tarea:
+   1. Asigna un nombre a la tarea "serve"
+   2. Asigna el array con el conjunto de tareas que se van a ejecutar previamente.
+   3. Define las acciones de la tarea  */
+gulp .task( 'serve', [ 'sass' ], function() {
+  /* a. Inicializa el servidor, indicandole los archivos a los que les va a hacer seguimiento de cambios  */
+  browserSync .init ([
+      'app/css/*.css',
+      'app/js/*.js',
+      'app/*.html'
+    ],
+    {
+      /* Creamos nuestro servidor */
+      server: {
+        /* Directorio base del proyecto */
+        baseDir: 'app'
+      }
+    }
+  )
+});
+
+/* NOTA:
+    Para lanzar esta tarea usamos el comando gulp y el nombre de la tarea.
+    $ gulp serve
+
+    Que se encargará a su ves de lanzar la tarea "sass"
 */
