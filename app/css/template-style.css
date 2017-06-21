@@ -1,2 +1,9 @@
 body {
-  background-color: yellow; }
+  background-color: orange; }
+
+h1 {
+  text-transform: uppercase;
+  color: white; }
+
+p {
+  font-size: 1.2rem; }

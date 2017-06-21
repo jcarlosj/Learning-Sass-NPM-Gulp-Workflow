@@ -69,3 +69,14 @@ gulp .task( 'watch', [ 'sass', 'serve' ], function() {
 
     Que se encargará a su ves de lanzar la tarea "sass" y la tarea "serve" previamente
 */
+
+/* Creamos la 4ta Tarea:
+    1. Asigna la tarea como una tarea por defecto
+    2. Se define que tarea o tareas va a ejecutar  */
+gulp .task( 'default', [ 'watch' ] );
+/* NOTA:
+    Para lanzar esta tarea que está definida por defecto debemos usar solamente el comando gulp.
+    $ gulp watch
+
+    Que se encargará a su ves de lanzar la tarea "watch" previamente
+*/
