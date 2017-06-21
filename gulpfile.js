@@ -3,6 +3,7 @@ var gulp = require( 'gulp' );
 var sass = require( 'gulp-sass' );
 var browserSync = require( 'browser-sync' );
 var reload = browserSync .reload;
+var autoprefixer = require( 'gulp-autoprefixer' );
 
 /* Creamos la 1era Tarea:
    1. Ejecuta el paquete que va a realizar la tarea "sass"
@@ -12,6 +13,7 @@ var reload = browserSync .reload;
       c. Indica a Gulp el destino a donde se crearán los archivos preprocesados por Sass (archivos de estilos CSS)  */
 gulp .task( 'sass', function() {
   gulp .src( 'scss/template-style.scss' ) /* Directorio origen */
+       .pipe( autoprefixer() )
        .pipe(
          // Objetc
          sass({

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: orange; }
 
@@ -5,5 +6,18 @@ h1 {
   text-transform: uppercase;
   color: white; }
 
-p {
-  font-size: 1.2rem; }
+button {
+  background: white;
+  color: red;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 0;
+  padding: 15px;
+  /* EL autoprefixer actuará en los comandos que aun no
+    estan aceptados por motores de los navegadores */
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease; }
+  button:hover {
+    background-color: red;
+    color: white;
+    font-weight: bold; }

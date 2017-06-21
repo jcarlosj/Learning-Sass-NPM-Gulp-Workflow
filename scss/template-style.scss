@@ -7,6 +7,19 @@ h1 {
   color: white;
 }
 
-p {
-  font-size: 1.2rem;
+button {
+  background: white;
+  color: red;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 0;
+  padding: 15px;
+  /* EL autoprefixer actuará en los comandos que aun no
+    estan aceptados por motores de los navegadores */
+  transition: all 3s ease;
+  &:hover {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+  }
 }
